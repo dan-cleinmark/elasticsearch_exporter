@@ -50,11 +50,11 @@ endif
 
 GO_VERSION ?= 1.4.2
 
-ifeq ($(shell type go >/dev/null && go version | sed 's/.*go\([0-9.]*\).*/\1/'), $(GO_VERSION))
-	GOROOT := $(shell go env GOROOT)
-else
+#ifeq ($(shell type go >/dev/null && go version | sed 's/.*go\([0-9.]*\).*/\1/'), $(GO_VERSION))
+#	GOROOT := $(shell go env GOROOT)
+#else
 	GOROOT := $(CURDIR)/.build/go$(GO_VERSION)
-endif
+#endif
 
 GOURL      ?= https://golang.org/dl
 GOPKG      ?= go$(GO_VERSION).$(GOOS)-$(GOARCH)$(RELEASE_SUFFIX).tar.gz
